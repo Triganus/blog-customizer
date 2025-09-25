@@ -30,7 +30,7 @@ const App = () => {
 	const [draftState, setDraftState] =
 		useState<ArticleStateType>(defaultArticleState);
 	// Открыт ли сайдбар
-	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
 	// CSS-переменные для статьи формируем из appliedState
 	const cssVars = useMemo(
@@ -45,8 +45,11 @@ const App = () => {
 		[appliedState]
 	);
 
-	const handleToggleOpen = useCallback(() => setIsOpen((v: boolean) => !v), []);
-	const handleClose = useCallback(() => setIsOpen(false), []);
+	const handleToggleOpen = useCallback(
+		() => setIsMenuOpen((v: boolean) => !v),
+		[]
+	);
+	const handleClose = useCallback(() => setIsMenuOpen(false), []);
 
 	const handleChange = useCallback((next: Partial<ArticleStateType>) => {
 		setDraftState((prev: ArticleStateType) => ({ ...prev, ...next }));
@@ -54,20 +57,20 @@ const App = () => {
 
 	const handleApply = useCallback(() => {
 		setAppliedState(draftState);
-		setIsOpen(false);
+		setIsMenuOpen(false);
 	}, [draftState]);
 
 	const handleReset = useCallback(() => {
 		// Сброс к начальному состоянию и немедленное применение
 		setDraftState(defaultArticleState);
 		setAppliedState(defaultArticleState);
-		setIsOpen(false);
+		setIsMenuOpen(false);
 	}, []);
 
 	return (
 		<div className={clsx(styles.main)} style={cssVars}>
 			<ArticleParamsForm
-				isOpen={isOpen}
+				isOpen={isMenuOpen}
 				onToggleOpen={handleToggleOpen}
 				onClose={handleClose}
 				value={draftState}
