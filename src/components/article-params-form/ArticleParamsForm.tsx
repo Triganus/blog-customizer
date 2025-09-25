@@ -98,41 +98,51 @@ export const ArticleParamsForm = (props: Props) => {
 					className={styles.form}
 					onSubmit={handleSubmit}
 					onReset={handleReset}>
-					<Select
-						title='Шрифт'
-						options={fontFamilyOptions}
-						selected={value.fontFamilyOption}
-						onChange={handleFontFamilyChange}
-						placeholder='Выберите шрифт'
-					/>
-					<RadioGroup
-						title='Размер шрифта'
-						name='fontSize'
-						options={fontSizeOptions}
-						selected={value.fontSizeOption}
-						onChange={handleFontSizeChange}
-					/>
-					<Select
-						title='Цвет шрифта'
-						options={fontColors}
-						selected={value.fontColor}
-						onChange={handleFontColorChange}
-						placeholder='Цвет текста'
-					/>
-					<Select
-						title='Цвет фона'
-						options={backgroundColors}
-						selected={value.backgroundColor}
-						onChange={handleBgColorChange}
-						placeholder='Цвет фона'
-					/>
-					<Select
-						title='Ширина контейнера'
-						options={contentWidthArr}
-						selected={value.contentWidth}
-						onChange={handleWidthChange}
-						placeholder='Ширина'
-					/>
+					<div className={styles.section}>
+						<Select
+							title='Шрифт'
+							options={fontFamilyOptions}
+							selected={value.fontFamilyOption}
+							onChange={handleFontFamilyChange}
+							placeholder='Выберите шрифт'
+						/>
+					</div>
+					<div className={styles.section}>
+						<RadioGroup
+							title='Размер шрифта'
+							name='fontSize'
+							options={fontSizeOptions}
+							selected={value.fontSizeOption}
+							onChange={handleFontSizeChange}
+						/>
+					</div>
+					<div className={styles.section}>
+						<Select
+							title='Цвет шрифта'
+							options={fontColors}
+							selected={value.fontColor}
+							onChange={handleFontColorChange}
+							placeholder='Цвет текста'
+						/>
+					</div>
+					<div className={styles.section}>
+						<Select
+							title='Цвет фона'
+							options={backgroundColors}
+							selected={value.backgroundColor}
+							onChange={handleBgColorChange}
+							placeholder='Цвет фона'
+						/>
+					</div>
+					<div className={styles.section}>
+						<Select
+							title='Ширина контейнера'
+							options={contentWidthArr}
+							selected={value.contentWidth}
+							onChange={handleWidthChange}
+							placeholder='Ширина'
+						/>
+					</div>
 
 					<div className={styles.bottomContainer}>
 						<Button title='Сбросить' htmlType='reset' type='clear' />
