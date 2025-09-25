@@ -1,4 +1,5 @@
 import { createRoot } from 'react-dom/client';
+import * as React from 'react';
 import {
 	StrictMode,
 	CSSProperties,
@@ -64,7 +65,7 @@ const App = () => {
 	}, []);
 
 	return (
-		<main className={clsx(styles.main)} style={cssVars}>
+		<div className={clsx(styles.main)} style={cssVars}>
 			<ArticleParamsForm
 				isOpen={isOpen}
 				onToggleOpen={handleToggleOpen}
@@ -75,7 +76,7 @@ const App = () => {
 				onReset={handleReset}
 			/>
 			<Article />
-		</main>
+		</div>
 	);
 };
 
