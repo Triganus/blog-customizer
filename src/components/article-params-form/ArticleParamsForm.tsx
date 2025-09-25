@@ -1,4 +1,5 @@
 import { useCallback, useRef } from 'react';
+import clsx from 'clsx';
 import { ArrowButton } from 'src/ui/arrow-button';
 import { Button } from 'src/ui/button';
 import { Select } from 'src/ui/select';
@@ -87,11 +88,7 @@ export const ArticleParamsForm = (props: Props) => {
 		<>
 			<ArrowButton isOpen={isOpen} onClick={onToggleOpen} />
 			<aside
-				className={
-					isOpen
-						? styles.container + ' ' + styles.container_open
-						: styles.container
-				}
+				className={clsx(styles.container, isOpen && styles.container_open)}
 				ref={rootRef}
 				data-testid='sidebar'>
 				<form
