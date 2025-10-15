@@ -20,13 +20,20 @@
 	width: 616px;
 	height: auto;
 	min-height: 100%;
-	padding: 50px 31px;
+	padding: 16px;
 	background-color: #ffffff;
 	border-right: 1px solid #000000;
+}
+
+.section {
+	display: flex;
+	flex-direction: column;
+	row-gap: 4px; /* расстояние между заголовком и контролом */
+	margin-bottom: 24px; /* расстояние между блоками */
 }
 
 .bottomContainer {
 	display: flex;
 	justify-content: space-between;
-	margin-top: auto;
+	margin-top: 207px; /* фиксированный отступ до кнопок по макету */
 }
